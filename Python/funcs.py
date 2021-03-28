@@ -23,10 +23,10 @@ class NonLinear:
         self.hlogdt = val*self.dt
         return self
     
-#    def helogistic(self, c, h, e, t):
-#        val = c(1-c)-h(1+e*np.sin(t)
-#        self.helogdt = val*self.dt
-#        return self
+    def helogistic(self, c, h, e, t):
+        val = c*(1-c)-h*(1+e*np.sin(t))
+        self.helogdt = val*self.dt
+        return self
         
     def sign(self, c):
         if c>0:

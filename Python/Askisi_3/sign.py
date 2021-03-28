@@ -8,10 +8,10 @@ sys.path.insert(0,parentdir)
 
 from funcs import NonLinear
 
-system = NonLinear(0.5,0.1)
+system = NonLinear(50,0.1)
 
 x=np.zeros(system.stepsnumber)
-t=np.linspace(0,0,system.stepsnumber)
+t=np.zeros(system.stepsnumber)
 
 x[0]=0
 
@@ -20,11 +20,13 @@ for i in np.arange(system.stepsnumber):
     system.sign(x[i-1])
     x[i]=x[i-1]+system.signdt
     
-print(t[0:3])
 plt.plot(t, x, 'b')
 plt.plot(t, t, 'r')
-plt.title('$\dot{x}=\pm 1$')
+plt.plot(t, np.zeros(system.stepsnumber), 'k')
+plt.title('Άσκηση 8')
 plt.xlabel('$t$')
+plt.xlim(0,0.5)
+plt.ylim(0,1)
 plt.ylabel('$x(t)$')
-plt.savefig('sign.png')
+plt.savefig('Fig/sign.png')
 plt.show()
