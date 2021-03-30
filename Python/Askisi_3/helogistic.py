@@ -15,6 +15,7 @@ t=np.linspace(0,2*np.pi,system.stepsnumber)
 
 x0=np.linspace(0,2,50)
 P=np.zeros(50)
+PP=np.zeros(50)
 
 plt.figure(1)
 plt.title('Λογιστική Καμπύλη')
@@ -35,6 +36,7 @@ for j in np.arange(len(x0)):
 plt.savefig('Fig/helog.png')
 plt.figure(2)
 idx = np.argwhere(np.diff(np.sign(P - x0))).flatten()
+print(x0[idx], P[idx])
 plt.plot(x0[idx], P[idx], 'ro')
 plt.plot(x0, P, 'b')
 plt.plot(x0, x0, '--r')
