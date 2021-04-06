@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def gompertz_t(x, h, t):
     return (-(x*np.log(x))-h*(1+np.sin(t)))
-    
+
 Nt=10 #to exw mikro gia na to kanei pio grigora to laptop
 Nb=1000
 x=np.zeros(Nt)
@@ -30,10 +30,10 @@ for k in np.arange(Nb):
         x[0]=x0[j]
         for i in np.arange(1, Nt):
             x[i]=x[i-1]+dt*gompertz_t(x[i-1], h[k], t[i])
-            
+
             if x[i]<=0:
                 x[i]=0.000000000000001
-                
+
         P[k]=x[i]
 
 
@@ -41,14 +41,14 @@ for k in np.arange(Nb):
     fm=np.append(fm, x1[idx1])
     idx2 = (np.abs(P[len(x1):] - x2)).argmin()
     fp=np.append(fp, x2[idx2])
-    
-#hp=(1+np.sqrt(1-(4*h)))/2  #to lathos
+
+#hp=(1+np.sqrt(1-(4*h)))/2  #to thewritiko (lathos)
 #hm=(1-np.sqrt(1-4*h))/2    #to idio lathos
 
 
 plt.plot(h, fm, '--r')
 plt.plot(h, fp, 'b')
-#plt.plot(h, hp, '--k') #plotarei ta lethi
+#plt.plot(h, hp, '--k') #plotarei to lαthos
 #plt.plot(h, hm, '--k') #same
 plt.title('Διάγραμα Διακλάδωσης για τη χρονοεξαρτώμενη μορφή.')
 plt.xlabel('$h$')
