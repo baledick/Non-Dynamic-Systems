@@ -13,9 +13,8 @@ system = NonLinear(2,0.1)
 x=np.zeros(system.stepsnumber)
 t=np.linspace(0,2*np.pi,system.stepsnumber)
 
-x0=np.linspace(0,2,50)
-P=np.zeros(50)
-PP=np.zeros(50)
+x0=np.linspace(0,2,1050)
+P=np.zeros(1050)
 
 plt.figure(1)
 plt.title('Λογιστική Καμπύλη')

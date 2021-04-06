@@ -34,7 +34,7 @@ for k in np.arange(len(e)):
         plt.plot(x0, P, 'b')
         PP[l]=P[j]
     idx = np.argwhere(np.diff(np.sign(PP - x0))).flatten()
-    print(x0[idx], P[idx])
+    print(x0[idx], PP[idx])
     plt.plot(x0[idx], PP[idx], 'ro')
     plt.plot(x0, PP, 'g')
 

@@ -36,4 +36,20 @@ class NonLinear:
         self.signdt = val*self.dt
         return self
         
+    def hgompertz(self, c, h):
+        val = -(c*np.log(c))-h
+        self.hgomp=val*self.dt
+        return self
+        
+    def htgompertz(self, c, h, t):
+        val = -(c*np.log(c))-h*(1+np.sin(t))
+        self.hgompt=val*self.dt
+        return self
+        
+    def xsq(self, c, t):
+        val = x*2-1-np.cos(t)
+        self.xqrd = val*self.dt
+        return self
+            
+        
 
