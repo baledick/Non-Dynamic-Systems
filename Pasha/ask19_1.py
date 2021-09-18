@@ -13,6 +13,6 @@ for i in range(steps):
     plt.plot(x,t_range,'b')
 
 
-plt.savefig('ask2_1.png')
+plt.savefig('ask1.png')
 plt.show()
 # %%
